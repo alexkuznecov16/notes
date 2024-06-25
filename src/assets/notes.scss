@@ -14,6 +14,10 @@
       align-items: center;
       gap: 10px;
 
+      label {
+        color: #fff;
+      }
+
       input {
         border: 1px solid;
         padding: 12px 16px;
@@ -44,6 +48,8 @@
 
       .Notes-item {
         position: relative;
+        background-color: #fff;
+        border: 1px solid #000;
         width: 250px;
         height: auto;
         word-wrap: break-word;
