@@ -43,6 +43,7 @@
       gap: 30px;
 
       .Notes-item {
+        position: relative;
         width: 250px;
         height: auto;
         word-wrap: break-word;
@@ -54,7 +55,11 @@
 
         button {
           background-color: red;
-          color: #fff;
+          color: #000;
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 16px;
         }
       }
     }
