@@ -5,10 +5,10 @@
         <div class="Notes-add">
           <label for="add">Add note:</label>
           <input minlength="5" type="text" id="add" name="add" placeholder="My note." v-model="newNote" />
-          <button type="button" @click="addNote()">+</button>
+          <button type="button" @click="addNote()">+</button> <!-- button for add note -->
         </div>
         <div class="Notes-elements">
-          <UsersNote :noteItems="noteItems" :deleteNote="deleteNote" />
+          <UsersNote :noteItems="noteItems" :deleteNote="deleteNote" /> <!-- set delete function and note items array -->
         </div>
       </div>
     </div>
@@ -16,20 +16,22 @@
 </template>
 
 <script>
-import UsersNote from './UsersNote.vue';
+import UsersNote from './UsersNote.vue'; // import note cards
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Notes',
   components: {
+    // imports
     UsersNote,
   },
   data() {
     return {
-      noteItems: [],
-      newNote: '',
+      noteItems: [], // array of notes
+      newNote: '', // initial value of new note text
     };
   },
+  // functions
   methods: {
     addNote() {
       if (this.newNote.length < 5) {
@@ -43,8 +45,8 @@ export default {
       }
     },
     deleteNote(index) {
-      this.noteItems.splice(index, 1);
-      this.saveNotes(); // save note in localStorage
+      this.noteItems.splice(index, 1); // delete note by index
+      this.saveNotes(); // delete note from localStorage
     },
     saveNotes() {
       localStorage.setItem('noteItems', JSON.stringify(this.noteItems)); // add item to localStorage
@@ -56,7 +58,7 @@ export default {
       }
     },
   },
-  // Вызывается после того, как компонент был смонтирован
+  // call after component load
   mounted() {
     this.loadNotes();
   },

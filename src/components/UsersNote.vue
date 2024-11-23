@@ -1,7 +1,8 @@
 <template>
+  <!-- iterate each note item -->
   <div class="Notes-item" v-for="(note, index) in noteItems" :key='index'>
-    <p>{{ note }}</p>
-    <button type="button" @click="deleteNote(index)">X</button>
+    <p>{{ note }}</p> <!-- print note value -->
+    <button type="button" @click="deleteNote(index)">X</button> <!-- button for delete note -->
   </div>
 </template>
 
